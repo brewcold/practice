@@ -1,3 +1,3 @@
 # practice
 
-## /js-algorithm-study-2024
+## /js-algorithm
