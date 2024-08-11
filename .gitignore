@@ -1,0 +1,33 @@
+# Node modules
+node_modules/
+
+# macOS Finder specific files
+.DS_Store
+
+# Log files
+*.log
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build output
+dist/
+build/
+out/
+
+# NPM package lock files
+package-lock.json
+yarn.lock
+
+# IDE specific files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+
+# System files
+Thumbs.db
