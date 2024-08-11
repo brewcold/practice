@@ -5,9 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <script src="./paragraph.js" defer></script>
+    <script src="./btn.js" defer></script>
     <link rel="stylesheet" href="./style.css" />
   </head>
   <body>
-    <custom-paragraph>우와</custom-paragraph>
+    <template id="custom-paragraph">
+      <style>
+        p {
+          margin: 0;
+          padding: 0;
+        }
+      </style>
+      <p class="paragraph"></p>
+    </template>
+    <template id="my-btn">
+      <button>
+        <slot name="icon"></slot>
+        <slot>Default Text</slot>
+      </button>
+    </template>
+    <!-- <custom-paragraph>우와</custom-paragraph> -->
+    <my-btn>
+      <span slot="icon">🚀</span>
+      <span>보내기!</span>
+    </my-btn>
   </body>
 </html>

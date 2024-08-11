@@ -3,23 +3,22 @@ customElements.define(
   class CustomParagraph extends HTMLElement {
     constructor() {
       super()
+
+      const template = document.getElementById(
+        'custom-paragraph'
+      ) as HTMLTemplateElement
+
+      const contents = template.content.cloneNode(true)
+
+      const shadowRoot = this.attachShadow({ mode: 'open' })
+      shadowRoot.appendChild(contents)
     }
 
-    connectedCallback(): void {
-      const shadowRoot = this.attachShadow({ mode: 'open' })
-
-      const p = document.createElement('p')
-      p.setAttribute('class', 'paragraph')
-      p.textContent = this.textContent || ''
-
-      const style = document.createElement('style')
-      style.textContent = `
-        .paragraph {
-          color: red;
-        }
-      `
-      shadowRoot.appendChild(style)
-      shadowRoot.appendChild(p)
+    connectedCallback() {
+      const paragraph = this.shadowRoot!.querySelector('.paragraph')
+      if (paragraph) {
+        paragraph.textContent = this.textContent || ''
+      }
       this.textContent = ''
     }
   }

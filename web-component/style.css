@@ -3,4 +3,7 @@ body,
 h1,
 p {
   box-sizing: border-box;
+  color: 'blue';
+  margin: 0;
+  padding: 0;
 }
